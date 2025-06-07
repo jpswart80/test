@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { Button } from '../../components/design-system/Button';
 import { BottomSheet } from '../../components/design-system/BottomSheet';
