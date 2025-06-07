@@ -1,3 +1,12 @@
+export async function POST(req: NextRequest) {
+  console.log('POST /api/generate-ui called');
+  try {
+    // ...existing code...
+  } catch (error) {
+    console.error('OpenAI API error:', error);
+    return NextResponse.json({ error: 'Internal server error', details: String(error) }, { status: 500 });
+  }
+}
 import { NextRequest, NextResponse } from 'next/server';
 import { OpenAI } from 'openai';
 
@@ -77,3 +86,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 } 
+export async function POST(req: NextRequest) {
+  try {
+    // ...existing code...
+  } catch (error) {
+    console.error('OpenAI API error:', error); // This will show up in Vercel logs
+    return NextResponse.json({ error: 'Internal server error', details: String(error) }, { status: 500 });
+  }
+}
